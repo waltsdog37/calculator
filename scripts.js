@@ -1,24 +1,13 @@
-let first = parseInt(prompt("First number: "));
-let second = parseInt(prompt("Second number: "));
+function firstNumber () {
 
-function add() {
-    return(first + second);
 }
 
-function subtract() {
-    return first - second;
+function secondNumber () {
+
 }
 
-function multiply() {
-    return first * second;
-}
 
-function divide() {
-    return first / second;
+function operate () {
+    answer = firstNumber + operation + secondNumber;
+    return answer;
 }
-
-function operate() {
-    
-}
-
-console.log(add(first, second));
