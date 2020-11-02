@@ -2,13 +2,27 @@ body {
     font-size: 0;
 }
 
+p {
+  font-size: 20px;
+  text-align: center;
+}
+
+#choice {
+  width: 600px;
+  margin: 10px auto;
+}
+
+#toggle {
+  margin-left: 270px;
+}
+
 #calculator {
     display: flex;
     flex-direction: column;
-    margin: 40px auto;
+    margin: 10px auto;
     background-color: black;
     width: 600px;
-    height: 800px;
+    height: 700px;
     border: solid black 2px;
 }
 
@@ -43,6 +57,10 @@ button {
 
 #zero {
     width: 50%;
+}
+
+#plus-old {
+  display: none;
 }
 
 .operation {

@@ -17,13 +17,12 @@ console.log(style.href);
 
 function changeStyle () {
     let style = document.getElementById("style");
-    console.log(style.href);
-    if (style.href = "ios.css") {
-        style.href = "oldschool.css";
-        console.log("yes");
+    let old = "oldschool.css";
+    let ios = "ios.css";
+    let check = document.getElementById("change-style");
+    if (check.checked == true) {
+        style.setAttribute("href", old);
     } else {
-        style.href = "ios.css";
-        console.log("no");
+        style.setAttribute("href", ios);
     }
-
 }

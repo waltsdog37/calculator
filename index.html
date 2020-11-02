@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://marksheet.io/css/reset.css">
     <link id="style" rel="stylesheet" type="text/css" href="ios.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="scripts.js"></script>
 
     <title>Calculator</title>
@@ -15,16 +16,29 @@
 <body>
     <div id="main-container">
 
-        <label class="switch">
-            <input type="checkbox" id="change-style" onclick="changeStyle()">
-            <span class="slider round"></span>
-        </label>
+        <div id="choice">
+
+            <p>Choose your calculator style</p>
+            <p>iOS or 80s</p>
+
+            <div id="toggle">
+                <label class="switch">
+                    <input type="checkbox" id="change-style" onclick="changeStyle()">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+        </div>
+
+
 
 
         <div id="calculator">
 
+            <div id="solar"></div>
+
             <div id="output">
-                123456789
+                12345
             </div>
 
 
@@ -53,7 +67,8 @@
                 <button class="number">7</button>
                 <button class="number">8</button>
                 <button class="number">9</button>
-                <button class="operation">+</button>
+                <button class="operation" id="plus-ios">+</button>
+                <button class="operation" id="plus-old">+</button>
             </div>
 
             <div class="row">
@@ -61,6 +76,7 @@
                 <button class="number">.</button>
                 <button class="operation">=</button>
             </div>
+
 
 
         </div>
