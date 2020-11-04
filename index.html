@@ -7,7 +7,8 @@
     <link rel="stylesheet" type="text/css" href="https://marksheet.io/css/reset.css">
     <link id="style" rel="stylesheet" type="text/css" href="ios.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <script src="scripts.js"></script>
+
+
 
     <title>Calculator</title>
 
@@ -38,7 +39,7 @@
             <div id="solar"></div>
 
             <div id="output">
-                12345
+                
             </div>
 
 
@@ -46,42 +47,42 @@
                 <button class="function">AC</button>
                 <button class="function">+/-</button>
                 <button class="function">%</button>
-                <button class="operation">÷</button>
+                <button class="operation" id="\" onclick="getOperation(this.id)">÷</button>
             </div>
 
             <div class="row">
-                <button class="number">1</button>
-                <button class="number">2</button>
-                <button class="number">3</button>
-                <button class="operation">x</button>
+                <button class="number" value="1">1</button>
+                <button class="number" value="2">2</button>
+                <button class="number" value="3">3</button>
+                <button class="operation" id="*" onclick="getOperation(this.id)">x</button>
             </div>
 
             <div class="row">
-                <button class="number">4</button>
-                <button class="number">5</button>
-                <button class="number">6</button>
-                <button class="operation">-</button>
+                <button class="number" value="4">4</button>
+                <button class="number" value="5">5</button>
+                <button class="number" value="6">6</button>
+                <button class="operation" id="-" onclick="getOperation(this.id)">-</button>
             </div>
 
             <div class="row">
-                <button class="number">7</button>
-                <button class="number">8</button>
-                <button class="number">9</button>
-                <button class="operation" id="plus-ios">+</button>
-                <button class="operation" id="plus-old">+</button>
+                <button class="number" value="7">7</button>
+                <button class="number" value="8">8</button>
+                <button class="number" value="9">9</button>
+                <button class="operation" id="plus-ios" onclick="getOperation(this.id)">+</button>
+                <button class="operation" id="plus-old" onclick="getOperation(this.id)">+</button>
             </div>
 
             <div class="row">
-                <button class="number" id="zero">0</button>
+                <button class="number" id="zero" value="0">0</button>
                 <button class="number">.</button>
-                <button class="operation">=</button>
+                <button class="operation" id="=" onclick="compute()">=</button>
             </div>
 
 
 
         </div>
     </div>
-
+    <script src="scripts.js"></script>
 </body>
 
 </html>
