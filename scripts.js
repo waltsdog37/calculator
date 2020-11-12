@@ -1,79 +1,96 @@
-let number = [];
-let display;
+let number = "";
+let first;
+let second;
+const display = document.getElementById("output");
 
-// listen for number buttons to be clicked and add to number array
-let btns = document.querySelectorAll(".number, .function");
-for (let i=0; i<btns.length; i++) {
-    btns[i].addEventListener("click", function() {
-        number.push(btns[i].value);  
-        console.log(number);
-        output(number);
+
+// listen for button press and trigger resulting functions
+let btns = document.querySelectorAll("button");
+
+for (let i = 0; i < btns.length; i++) {
+    let btn = btns[i];
+    let findNumberClass = btn.getAttribute("class");
+    btn.addEventListener("click", function () {
+
+        // if button is a number, add it to number array
+        if (findNumberClass == "number") {
+            let digit = btn.value;
+            number = number + digit;
+            output(number);
+
+            // if button is AC, clear display
+        } else if (findNumberClass == "function") {
+            if (btn.value == "clear") {
+                number = "";
+                first = "";
+                second = "";
+                output(number);
+            }
+
+            // if button is operation, save number array as first and begin getting second
+        } else if (findNumberClass == "operation") {
+            operation = btn.value;
+            first = number;
+            number = "";
+
+            // if equals, change both numbers to integers and trigger operation function
+        } else if (findNumberClass == "equals") {
+            second = number;
+            first = parseInt(first);
+            second = parseInt(second);
+            operate(operation, first, second);
+
+        }
     });
-}
+};
 
-// display number, as buttons pushed, in output area
-// clear output if "a/c" pushed
+// display number in output area, as buttons are pushed
 function output(number) {
-    display = document.getElementById("output")
-    display.innerHTML = number.join("");
-    if (number[number.length-1] == '') {
-        display.value = "";
+    if (number == "") {
+        display.innerHTML = "";
+    } else { 
+        display.innerHTML = number;
     }
 }
 
-
-function getOperation(element) {
-    let operation;
-    if (element == "plus-ios" || element == "plus-old") {
-        operation = "+";
-    } else {
-        operation = element;
-    }
-    operate(operation);
-}
-
-function operate(operation) {
+// find the answer using the selected operation and both numbers
+function operate(operation, first, second) {
     switch (operation) {
         case "+":
-            add();
+            add(first, second);
             break;
         case "-":
-            console.log("sub ")
-            subtract();
+            subtract(first, second);
             break;
         case "*":
-            multiply();
+            multiply(first, second);
             break;
         case "/":
-            divide();
+            divide(first, second);
             break;
     }
 }
 
 // Four main operation functions
 function add(first, second) {
-    let answer = first + second;
-    console.log(answer);
+    number = first + second;
+    output(number);
 }
 
 function subtract(first, second) {
-    console.log(first, second);
-    let answer = first - second;
-    console.log(answer);
+    number = first - second;
+    output(number);
 }
 
 function multiply(first, second) {
-    let answer = first * second;
-    return answer;
+    number = first * second;
+    output(number);
 }
 
 function divide(first, second) {
-    let answer = first / second;
-    return answer;
+    number = first / second;
+    output(number);
 }
-
-
-
 
 
 // change CSS file with click of toggle switch
@@ -88,4 +105,3 @@ function changeStyle() {
         style.setAttribute("href", ios);
     }
 }
-
